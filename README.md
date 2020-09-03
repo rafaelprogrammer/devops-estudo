@@ -2,18 +2,19 @@
 
 ## **SUMÁRIO**
 
+- [ARQUITETURA](#arquitetura)
 - [CONFIGURAÇÕES GOOGLE CLOUD](#config)
-- [CONFIGURAÇÕES PASTAS - TRECHOS DOS VIDEOS GRAVADOS](#volume)
-- [DOMÍNIO ACOMPANHE](#dominio)
-- [API`S UTILIZADAS](#api)
-- [PUBLICAR NOVAS VERSÕES](#publicar)
+
+<a id="arquitetura"></a>
+## ARQUITETURA
+![ARQUITETURA](/imagens/arquitetura.png)
 
 <a id="config"></a>
 ## CONFIGURAÇÕES GOOGLE CLOUD
 
 ### Configurações das instâncias
 
-![Configuração das instâncias](/imagens/Instancias - Google Cloud.png)
+![Configurações das instâncias](/imagens/instancias-google-cloud.png)
 
 ```
 npm version major
