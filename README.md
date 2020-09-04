@@ -67,7 +67,7 @@
 - [ARQUITETURA](#arquitetura)
 - [DOMÍNIO](#dominio)
 - [CONFIGURAÇÕES GOOGLE CLOUD](#config)
-- [INSTALAÇÃO DO DOCKER](#docker)
+- [INSTALAÇÃO DO RANCHER - SINGLE NODE](#rancher)
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -118,4 +118,20 @@ $ apt-get install git -y
 $ curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ chmod +x /usr/local/bin/docker-compose
 $ ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+<a id="rancher"></a>
+## INSTALAÇÃO DO RANCHER - SINGLE NODE
+
+Entrar no host, que será usado para hospedar o Rancher Server.
+
+```
+$ docker ps -a
+$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 rancher/rancher:latest
+```
+Acessar e configurar:
+
+```
+https://rancher.rafaprogrammer.com.br/
+
 ```
