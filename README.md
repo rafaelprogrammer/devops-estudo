@@ -1,7 +1,6 @@
 # DEVOPS
-
-![Google Cloud](/imagens/Google-Cloud-Logo.png)
-![Kubernentes](/imagens/logo-kubernetes.png)
+<img src="imagens/Google-Cloud-Logo.png" width="300" height="200">
+<img src="imagens/logo-kubernetes.png" width="300">
 
 ## **SUMÁRIO**
 
