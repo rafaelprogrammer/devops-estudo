@@ -1,5 +1,6 @@
 # DEVOPS
 <table border="0">
+    <tr>
     <td><a href="https://console.cloud.google.com/">
     <img src="imagens/Google-Cloud-Logo.png" width="300">
     </a>
@@ -24,8 +25,10 @@
     <img src="imagens/logo-longhorn.png" width="300">
     </td>
     </a>
+    </tr>
 <table>
 <table border="0">
+<tr>
 <td>
     <a href="https://docs.traefik.io/">
     <img src="imagens/logo-traefik.png" width="300">
@@ -56,6 +59,7 @@
     <img src="imagens/logo-helm.jpg" width="300">
     </a>
     </td>
+    </tr>
 </table>
 
 ## **SUMÁRIO**
