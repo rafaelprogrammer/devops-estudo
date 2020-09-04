@@ -1,6 +1,18 @@
 # DEVOPS
-<img src="imagens/Google-Cloud-Logo.png" width="300" height="200">
-<img src="imagens/logo-kubernetes.png" width="300">
+<table>
+    <td>
+    <img src="imagens/Google-Cloud-Logo.png" width="300">
+    <td>
+    <td>
+    <img src="imagens/logo-kubernetes.png" width="300">
+    </td>
+    <td>
+    <img src="imagens/logo-docker.png" width="50%">
+    </td>
+    <td>
+    <img src="imagens/logo-rancher.png" width="300">
+    </td>
+<table>
 
 ## **SUMÁRIO**
 
