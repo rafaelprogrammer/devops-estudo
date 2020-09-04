@@ -3,6 +3,7 @@
 ## **SUMÁRIO**
 
 - [ARQUITETURA](#arquitetura)
+- [DOMÍNIO](#dominio)
 - [CONFIGURAÇÕES GOOGLE CLOUD](#config)
 - [INSTALAÇÃO DO DOCKER](#docker)
 
@@ -10,17 +11,26 @@
 ## ARQUITETURA
 ![ARQUITETURA](/imagens/arquitetura.png)
 
+<a id="dominio"></a>
+## DOMÍNIO
+
+```
+Criar domínio: https://registro.br/
+```
+### Configurar servidores de DNS do google cloud no registro.br
+
+![DOMINIO](/imagens/dominio.png)
+
 <a id="config"></a>
 ## CONFIGURAÇÕES GOOGLE CLOUD
 
-### Configurações das instâncias
+### Criação das instâncias
 
 ```
 Criar usando o Ubuntu e com no mínimo 30GB de armazenamento.
 ```
 
-![Configurações das instâncias]
-(/imagens/instancias-google-cloud.png)
+![Configurações das instâncias](/imagens/instancias-google-cloud.png)
 
 ### Configurações do DNS
 
