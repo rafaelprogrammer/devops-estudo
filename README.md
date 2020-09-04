@@ -1,4 +1,7 @@
-# DEVOPS - GOOGLE CLOUD
+# DEVOPS
+
+![Google Cloud](/imagens/Google-Cloud-Logo.png)
+![Kubernentes](/imagens/logo-kubernetes.png)
 
 ## **SUMÁRIO**
 
