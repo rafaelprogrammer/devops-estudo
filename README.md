@@ -1,5 +1,5 @@
 # DEVOPS
-<table cellspacing="0" cellpadding="0" style="border: none;">
+<table style="border: none;">
     <td>
     <a href="https://console.cloud.google.com/">
     <img src="imagens/Google-Cloud-Logo.png" width="300">
