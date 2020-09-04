@@ -1,5 +1,5 @@
 # DEVOPS
-<table style="border: none;">
+<table border="0">
     <td><a href="https://console.cloud.google.com/">
     <img src="imagens/Google-Cloud-Logo.png" width="300">
     </a>
@@ -25,7 +25,7 @@
     </td>
     </a>
 <table>
-<table style="border: none;">
+<table border="0">
 <td>
     <a href="https://docs.traefik.io/">
     <img src="imagens/logo-traefik.png" width="300">
