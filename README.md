@@ -1,27 +1,61 @@
 # DEVOPS
 <table border=0>
     <td>
-    <a href="https://console.cloud.google.com/" target="_blank">
+    <a href="https://console.cloud.google.com/">
     <img src="imagens/Google-Cloud-Logo.png" width="300">
     </a>
     </td>
     <td>
-    <a href="https://kubernetes.io/" target="_blank">
+    <a href="https://kubernetes.io/">
     <img src="imagens/logo-kubernetes.png" width="300">
     </a>
     </td>
     <td>
+    <a href="https://www.docker.com/">
     <img src="imagens/logo-docker.png" width="200">
+    </a>
     </td>
     <td>
+    <a href="https://rancher.com/">
     <img src="imagens/logo-rancher.png" width="300">
     </td>
+    </a>
     <td>
+    <a href="https://longhorn.io/">
     <img src="imagens/logo-longhorn.png" width="300">
     </td>
+    </a>
     <td>
+    <a href="https://docs.traefik.io/">
     <img src="imagens/logo-traefik.png" width="300">
+    </a>
     </td>
+    <td>
+    <a href="https://istio.io/">
+    <img src="imagens/logo-istio.jpg" width="300">
+    </a>
+    </td>
+    <td>
+    <a href="https://www.graylog.org/">
+    <img src="imagens/logo-graylog.png" width="300">
+    </a>
+    </td>
+    <td>
+    <a href="https://grafana.com/">
+    <img src="imagens/logo-grafana.png" width="300">
+    </a>
+    </td>
+    <td>
+    <a href="https://prometheus.io/">
+    <img src="imagens/logo-prometheus.png" width="300">
+    </a>
+    </td>
+    <td>
+    <a href="https://helm.sh/">
+    <img src="imagens/logo-helm.jpg" width="300">
+    </a>
+    </td>
+    
 <table>
 
 ## **SUMÁRIO**
