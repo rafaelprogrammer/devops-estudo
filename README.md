@@ -68,6 +68,7 @@
 - [DOMÍNIO](#dominio)
 - [CONFIGURAÇÕES GOOGLE CLOUD](#config)
 - [INSTALAÇÃO DO RANCHER - SINGLE NODE](#rancher)
+- [INSTALAÇÃO DO KUBERNETES](#kubernetes)
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -133,4 +134,41 @@ Acessar e configurar:
 
 ```
 https://rancher.rafaprogrammer.com.br/
+```
+<a id="kubernetes"></a>
+## INSTALAÇÃO DO KUBERNETES
+
+No rancher, adicionar o cluster e depois o rancher irá exibir um comando de docker run, para adicionar os host's (k8s-1 e k8s-2). Obs: deixar o Nginx Ingress (Aba - Advanced Options) desabilitado, pois será criado um.
+
+Executar o comando que vai ser gerado pelo rancher durante a criação do cluster, para cada host gerenciado (k8s-1 e k8s-2):
+
+Obs: adicionar sempre: etcd, controlplane, worker
+
+```
+k8s-1: 
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.4.7 --server https://rancher.rafaprogrammer.com.br --token rvdgt4882qg84w244jshfm2tc7g5phjkrhnsrhfh8l69bwtxdghvqp --ca-checksum 2ee13e4c57c9f9ca6eda2c5f6707bb54148e63c026fd17cefbacb5dd501f6d23 --node-name k8s-1 --etcd --controlplane --worker
+
+k8s-2: 
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.4.7 --server https://rancher.rafaprogrammer.com.br --token rvdgt4882qg84w244jshfm2tc7g5phjkrhnsrhfh8l69bwtxdghvqp --ca-checksum 2ee13e4c57c9f9ca6eda2c5f6707bb54148e63c026fd17cefbacb5dd501f6d23 --node-name k8s-2 --etcd --controlplane --worker
+```
+
+Será um cluster com 2 nós. Navegar pelo Rancher e ver os painéis e funcionalidades.
+
+### Instalar kubectl no host rancher-server
+
+```
+$ sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+$ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+$ sudo apt-get update
+$ sudo apt-get install -y kubectl
+```
+
+Com o kubectl instalado, pegar as credenciais de acesso no Rancher e configurar o kubectl (pegar o dados do arquivo - Kubeconfig File no cluster criado).
+
+```
+$ cd /home/ubuntu
+$ mkdir -p ~/.kube
+$ vi ~/.kube/config
+$ kubectl get nodes
 ```
