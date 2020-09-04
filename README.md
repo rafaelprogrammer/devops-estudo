@@ -1,16 +1,26 @@
 # DEVOPS
-<table>
+<table border=0>
     <td>
+    <a href="https://console.cloud.google.com/" target="_blank">
     <img src="imagens/Google-Cloud-Logo.png" width="300">
-    <td>
-    <td>
-    <img src="imagens/logo-kubernetes.png" width="300">
+    </a>
     </td>
     <td>
-    <img src="imagens/logo-docker.png" width="50%">
+    <a href="https://kubernetes.io/" target="_blank">
+    <img src="imagens/logo-kubernetes.png" width="300">
+    </a>
+    </td>
+    <td>
+    <img src="imagens/logo-docker.png" width="200">
     </td>
     <td>
     <img src="imagens/logo-rancher.png" width="300">
+    </td>
+    <td>
+    <img src="imagens/logo-longhorn.png" width="300">
+    </td>
+    <td>
+    <img src="imagens/logo-traefik.png" width="300">
     </td>
 <table>
 
