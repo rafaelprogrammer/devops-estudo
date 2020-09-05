@@ -200,3 +200,9 @@ $ cd devops-estudo/traefik
 $ vi traefik-web-ui.yml
 $ kubectl apply -f traefik-web-ui.yml
 ```
+
+Acessar:
+
+```
+http://traefik.rancher.<dominio>/
+```
