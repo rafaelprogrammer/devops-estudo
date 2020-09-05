@@ -70,7 +70,7 @@
 - [INSTALAÇÃO DO RANCHER - SINGLE NODE](#rancher)
 - [INSTALAÇÃO DO KUBERNETES](#kubernetes)
 - [INSTALAÇÃO DO TRAEFIK - DNS](#traefik)
-- [INSTALAÇÃO DO LONGHORN](#longhorn)
+- [INSTALAÇÃO DO LONGHORN - VOLUMES](#longhorn)
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -209,9 +209,11 @@ http://traefik.rancher.<dominio>/
 ```
 
 <a id="longhorn"></a>
-## INSTALAÇÃO DO LONGHORN
+## INSTALAÇÃO DO LONGHORN - VOLUMES
 
 No cluster criado na parte default, dentro do rancher, no menu APPS instale o LONGHORN clicando no botão LAUNCH. Tudo será criado no Namespace: longhorn-system.
+
+Em APPS você pode acessar a página de administração do longhorn.
 
 Para fazer um teste de criação do volume faça o deployment do pod com o volume, que estará apontando para um caminho no host. Execute os comandos abaixo:
 
