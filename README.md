@@ -176,7 +176,9 @@ $ kubectl get nodes
 <a id="traefik"></a>
 ## INSTALAÇÃO DO TRAEFIK - DNS
 
+```
 *.rancher.<dominio>
+```
 
 O Traefik é a aplicação que será usada como ingress. Ele irá ficar escutando pelas entradas de DNS que o cluster deve responder. Ele possui um dashboard de monitoramento e com um resumo de todas as entradas que estão no cluster.
 
@@ -188,9 +190,10 @@ $ kubectl apply -f https://raw.githubusercontent.com/containous/traefik/v1.7/exa
 $ kubectl --namespace=kube-system get pods
 ```
 
+```
 Configurar o DNS pelo qual o Traefik irá responder. No arquivo traefik-web-ui.yml, localizar a url, e fazer a alteração (onde possui <dominio> alterar para o desejado). Após a alteração feita, rodar o comando abaixo para aplicar o deployment no cluster.
 
-```
+
 $ cd /home/ubuntu
 $ git clone https://github.com/rafaelprogrammer/devops-estudo.git
 $ cd devops-estudo/traefik
