@@ -216,4 +216,4 @@ No cluster criado na parte default, dentro do rancher, no menu APPS instale o LO
 Para fazer um teste de criação do volume faça o deployment do pod com o volume, que estará apontando para um caminho no host. Execute os comandos abaixo:
 
 $ cd devops-estudo/volume
-$ kubectl apply -f mariadb-longhorn-volume.yml
+$ kubectl apply -f mariadb-mysql-longhorn.yml
