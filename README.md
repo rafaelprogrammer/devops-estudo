@@ -70,6 +70,7 @@
 - [INSTALAÇÃO DO RANCHER - SINGLE NODE](#rancher)
 - [INSTALAÇÃO DO KUBERNETES](#kubernetes)
 - [INSTALAÇÃO DO TRAEFIK - DNS](#traefik)
+- [INSTALAÇÃO DO LONGHORN](#longhorn)
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -206,3 +207,13 @@ Acessar:
 ```
 http://traefik.rancher.<dominio>/
 ```
+
+<a id="longhorn"></a>
+## INSTALAÇÃO DO LONGHORN
+
+No cluster criado na parte default, dentro do rancher, no menu APPS instale o LONGHORN clicando no botão LAUNCH. Tudo será criado no Namespace: longhorn-system.
+
+Para fazer um teste de criação do volume faça o deployment do pod com o volume, que estará apontando para um caminho no host. Execute os comandos abaixo:
+
+$ cd devops-estudo/volume
+$ kubectl apply -f mariadb-longhorn-volume.yml
