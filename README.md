@@ -71,6 +71,7 @@
 - [INSTALAÇÃO DO KUBERNETES](#kubernetes)
 - [INSTALAÇÃO DO TRAEFIK - DNS](#traefik)
 - [INSTALAÇÃO DO LONGHORN - VOLUMES](#longhorn)
+- [INSTALAÇÃO DO GRAYLOG - LOG](#graylog)
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -217,5 +218,22 @@ Em APPS você pode acessar a página de administração do longhorn.
 
 Para fazer um teste de criação do volume faça o deployment do pod com o volume, que estará apontando para um caminho no host. Execute os comandos abaixo:
 
+```
 $ cd devops-estudo/volume
 $ kubectl apply -f mariadb-mysql-longhorn.yml
+```
+
+<a id="graylog"></a>
+## INSTALAÇÃO DO GRAYLOG - LOG
+
+O Graylog é a aplicação que funciona como agregador de logs do cluster. Os logs dos containers podem ser vistos pelo Rancher, é um dos níveis de visualização. Pelo Graylog temos outros funcionalidades, e também é possível salvar para posterior pesquisa, e muitas outras funcionalidades.
+
+Para instalar o Graylog, executar o arquivo graylog.yml. Para isso, é preciso que sejam editados 2 pontos no arquivo.
+
+Linha 226 - value: http://graylog.rancher.<dominio>/api e Linha 297 - host: graylog.rancher.<dominio>
+
+```
+$ cd devops-estudo/graylog
+$ vi graylog.yml
+$ kubectl apply -f graylog.yml
+```
