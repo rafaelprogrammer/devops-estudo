@@ -230,7 +230,10 @@ O Graylog é a aplicação que funciona como agregador de logs do cluster. Os lo
 
 Para instalar o Graylog, executar o arquivo graylog.yml. Para isso, é preciso que sejam editados 2 pontos no arquivo.
 
-Linha 226 - value: http://graylog.rancher.<dominio>/api e Linha 297 - host: graylog.rancher.<dominio>
+```
+Linha 226 - value: http://graylog.rancher.<dominio>/api
+Linha 297 - host: graylog.rancher.<dominio>
+```
 
 ```
 $ cd devops-estudo/graylog
