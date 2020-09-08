@@ -260,6 +260,8 @@ senha: admin
 
 No rancher e com o cluster selecionado, em TOOLS clicar em MONITORING e habilitar a monitoração. Aguarde até aparecer as métricas do grafana na tela. Esse processo pode demorar um pouco.
 
+OBS: Essa parte requer um bom recurso de CPUs, então é necessário aumentar mais CPUs nos hosts: k8s-1, k8s-2 e k8s-3.
+
 ![Grafana](/imagens/grafana.png)
 
 <a id="recursos"></a>
