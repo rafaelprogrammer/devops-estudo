@@ -67,11 +67,14 @@
 - [ARQUITETURA](#arquitetura)
 - [DOMÍNIO](#dominio)
 - [CONFIGURAÇÕES GOOGLE CLOUD](#config)
-- [INSTALAÇÃO DO RANCHER - SINGLE NODE](#rancher)
-- [INSTALAÇÃO DO KUBERNETES](#kubernetes)
-- [INSTALAÇÃO DO TRAEFIK - DNS](#traefik)
-- [INSTALAÇÃO DO LONGHORN - VOLUMES](#longhorn)
-- [INSTALAÇÃO DO GRAYLOG - LOG](#graylog)
+- [RANCHER - SINGLE NODE](#rancher)
+- [KUBERNETES](#kubernetes)
+- [TRAEFIK - DNS](#traefik)
+- [LONGHORN - VOLUMES](#longhorn)
+- [GRAYLOG - LOG](#graylog)
+- [GRAFANA/PROMETHEUS - MONITORAMENTO](#grafana)
+
+GRAFANA/PROMETHEUS - MONITORAMENTO
 
 <a id="arquitetura"></a>
 ## ARQUITETURA
@@ -250,3 +253,9 @@ http://graylog.rancher.<dominio>/
 user: admin
 senha: admin
 ```
+<a id="graylog"></a>
+## GRAFANA/PROMETHEUS - MONITORAMENTO
+
+No rancher e com o cluster selecionado, em TOOLS clicar em MONITORING e habilitar a monitoração. Aguarde até aparecer as métricas do grafana na tela. Esse processo pode demorar um pouco.
+
+![Grafana](/imagens/grafana.png)
