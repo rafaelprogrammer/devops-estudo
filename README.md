@@ -301,3 +301,5 @@ $ kubectl apply -f configmap.yml
 ```
 
 Acessar o rancher e verificar as configurações do container definidas no ConfigMap.
+
+![ConfigMap](/imagens/configmap.png)
