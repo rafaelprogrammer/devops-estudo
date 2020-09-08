@@ -243,3 +243,8 @@ $ cd devops-estudo/graylog
 $ vi graylog.yml
 $ kubectl apply -f graylog.yml
 ```
+
+Acessar:
+```
+http://graylog.rancher.<dominio>/
+```
