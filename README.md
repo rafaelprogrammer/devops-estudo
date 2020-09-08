@@ -73,6 +73,7 @@
 - [LONGHORN - VOLUMES](#longhorn)
 - [GRAYLOG - LOG](#graylog)
 - [GRAFANA/PROMETHEUS - MONITORAMENTO](#grafana)
+- [KUBERNETES - RECURSOS](#recursos)
 
 GRAFANA/PROMETHEUS - MONITORAMENTO
 
@@ -253,9 +254,33 @@ http://graylog.rancher.<dominio>/
 user: admin
 senha: admin
 ```
+
 <a id="graylog"></a>
 ## GRAFANA/PROMETHEUS - MONITORAMENTO
 
 No rancher e com o cluster selecionado, em TOOLS clicar em MONITORING e habilitar a monitoração. Aguarde até aparecer as métricas do grafana na tela. Esse processo pode demorar um pouco.
 
 ![Grafana](/imagens/grafana.png)
+
+<a id="recursos"></a>
+## KUBERNETES - RECURSOS
+
+### CronJob
+
+O tipo de serviço como CronJob é um serviço igual a uma cron, porém é executado no cluster kubernetes. Você agenda um pod que irá rodar em uma frequência determinada de tempo. Pode ser usado para diversas funções, como executar backup's dos bancos de dados.
+
+O pod de exemplo irá retornar uma mensagem de tempos em tempos, a mensagem é "Hello from the Kubernetes cluster".
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f cronjob.yml
+```
+
+Depois de criada a cron, pegamos o estado dela usando:
+```
+$ kubectl get cronjob hello
+```
+
+Ainda não existe um job ativo, e nenhum agendado também. Vamos esperar por 1 minutos ate o job ser criado:
+```
+$ kubectl  get jobs --watch
+```
