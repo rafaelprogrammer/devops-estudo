@@ -289,3 +289,15 @@ Ainda não existe um job ativo, e nenhum agendado também. Vamos esperar por 1 m
 ```
 $ kubectl  get jobs --watch
 ```
+
+### ConfigMap
+O ConfigMap é um tipo de componente muito usado, principalmente quando precisamos colocar configurações dos nossos serviços externas aos contâiners que estão rodando a aplicação.
+
+Exemplo:
+
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f configmap.yml
+```
+
+Acessar o rancher e verificar as configurações do container definidas no ConfigMap.
