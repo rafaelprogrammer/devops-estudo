@@ -93,7 +93,10 @@ Criar domínio: https://registro.br/
 ### Criação das instâncias
 
 ```
-Criar usando o Ubuntu e com no mínimo 30GB de armazenamento.
+rancher-server: Ubuntu, e2-standard-4 (4 vCPUs, 16 GB de memória), Disco permanente SSD de 30GB.
+k8s-1: Ubuntu, e2-standard-2 (2 vCPUs, 8 GB de memória), Disco permanente SSD de 30GB.
+k8s-2: Ubuntu, e2-standard-2 (2 vCPUs, 8 GB de memória), Disco permanente SSD de 30GB.
+k8s-3: Ubuntu, e2-standard-2 (2 vCPUs, 8 GB de memória), Disco permanente SSD de 30GB.
 ```
 
 ![Configurações das instâncias](/imagens/instancias-google-cloud.png)
