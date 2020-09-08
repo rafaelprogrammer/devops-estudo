@@ -247,4 +247,6 @@ $ kubectl apply -f graylog.yml
 Acessar:
 ```
 http://graylog.rancher.<dominio>/
+user: admin
+senha: admin
 ```
