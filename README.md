@@ -320,3 +320,30 @@ $ kubectl apply -f secrets.yml
 ```
 
 ![Secrets](/imagens/secrets.png)
+
+### Liveness
+
+Iremos testar como fazer para dizer ao kubernetes, quando recuperar a nossa aplicação, caso alguma coisa aconteça a ela.
+
+Código para simular o erro:
+
+```
+http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) { 
+	duration := time.Now().Sub(started) 
+	if duration.Seconds() > 10 { 
+		w.WriteHeader(500) 
+		w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds()))) 
+	} else { 
+		w.WriteHeader(200) 
+		w.Write([]byte("ok")) 
+	} 
+})
+```
+
+Como a aplicação irá retornar um erro, o serviço de liveness que iremos usar no Kubernetes, ficará verificando se a nossa aplicação está bem, e como ela irá falhar de tempos em tempos, o kubernetes irá reiniciar o nosso serviço.
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f liveness.yml 
+$ kubectl describe pod liveness-http 
+$ kubectl get pod liveness-http
+```
