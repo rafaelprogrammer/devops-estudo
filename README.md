@@ -309,7 +309,7 @@ Os secrets são usados para salvar dados sensitivos dentro do cluster, como por 
 
 Iremos criar os segredos.
 ```
-$ echo -n "<nome>" | base64
+$ echo -n "<username>" | base64
 $ echo -n "<senha>" | base64
 ```
 
