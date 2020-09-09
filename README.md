@@ -370,3 +370,43 @@ Em outra janela, você pode ver que o kubectl adicionou o label do deployment pa
 ```
 $ kubectl get pods -l app=nginx -L deployment
 ```
+
+### Autoscaling
+Iremos executar o tutorial oficial para autoscaling.
+
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#before-you-begin
+
+Para isso iremos rodar e expor o php-apache server
+
+Desabilitar o monitoramento com prometheus e Grafana para o Autoscaling poder funcionar.
+
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f php-apache.yml
+```
+Agora iremos fazer a criação do Pod Autoscaler
+
+
+```
+$ kubectl apply -f hpa.yml
+```
+
+Iremos pegar o HPA
+```
+$ kubectl get hpa
+```
+
+Autoscaling - Aumentar a carga
+
+Agora iremos aumentar a carga no pod contendo o apache em php.
+```
+$ kubectl run -i --tty load-generator --image=busybox /bin/sh
+# Hit enter for command prompt
+$ while true; do wget -q -O- http://php-apache.default.svc.cluster.local; done
+```
+
+Agora iremos em outro terminal, com o kubectl, verificar como está o HPA, e também no painel do Rancher.
+```
+$ kubectl get hpa
+$ kubectl get deployment php-apache
+```
