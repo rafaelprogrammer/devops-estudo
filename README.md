@@ -303,3 +303,18 @@ $ kubectl apply -f configmap.yml
 Acessar o rancher e verificar as configurações do container definidas no ConfigMap.
 
 ![ConfigMap](/imagens/configmap.png)
+
+### Secrets
+Os secrets são usados para salvar dados sensitivos dentro do cluster, como por exemplo senhas de bancos de dados. Os dados que ficam dentro do secrets não são visíveis a outros usuários, e também podem ser criptografados por padrão no banco.
+
+Iremos criar os segredos.
+```
+$ echo -n "<nome>" | base64
+$ echo -n "<senha>" | base64
+```
+
+Agora vamos escrever o secret com esses objetos. Após colocar os valores no arquivo secrets.yml, aplicar ele no cluster.
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f secrets.yml
+```
