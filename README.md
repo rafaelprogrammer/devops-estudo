@@ -318,3 +318,5 @@ Agora vamos escrever o secret com esses objetos. Após colocar os valores no arq
 $ cd devops-estudo/recursos
 $ kubectl apply -f secrets.yml
 ```
+
+![Secrets](/imagens/secrets.png)
