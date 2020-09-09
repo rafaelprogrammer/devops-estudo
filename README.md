@@ -347,3 +347,26 @@ $ kubectl apply -f liveness.yml
 $ kubectl describe pod liveness-http 
 $ kubectl get pod liveness-http
 ```
+
+### SetImage
+
+Iremos fazer o deployment do nginx na versão 1.7.9. Sendo 5 pods rodando a aplicação.
+
+Iremos rodar o comando de rolling update, para atualizar para a versão 1.9.1. Dessa forma o Kubernetes irá rodar 1 container com a nova versão, e para um container com a antiga versão. Ele irá fazer isso para cada um dos containers, substituindo todos eles, e não havendo parada de serviço.
+
+```
+$ cd devops-estudo/recursos
+$ kubectl apply -f rolling-update.yml
+```
+
+Nesse arquivo o nginx está na versão 1.7.9 Para atualizar a imagem do container para 1.9.1 iremos usar o kubectl rolling-update e especificar a nova imagem.
+
+```
+$ kubectl set image deployments/my-nginx nginx=nginx:1.9.1
+```
+	
+Em outra janela, você pode ver que o kubectl adicionou o label do deployment para os pods, que o valor é um hash da configuração, para distinguir os pods novos dos velhos
+
+```
+$ kubectl get pods -l app=nginx -L deployment
+```
