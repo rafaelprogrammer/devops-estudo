@@ -18,14 +18,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins
+      app: jenkins-selva
   template:
     metadata:
       labels:
-        app: jenkins
+        app: jenkins-selva
     spec:
       containers:
-      - name: jenkins
+      - name: jenkins-selva
         image: jenkins/jenkins:lts
         ports:
         - containerPort: 9090
@@ -43,7 +43,7 @@ metadata:
   name: jenkins-web
 spec:
   selector:
-    app: jenkins
+    app: jenkins-selva
   ports:
   - name: j-web
     port: 80
@@ -55,7 +55,7 @@ metadata:
   name: jenkins-web
 spec:
   rules:
-  - host: jenkins.rancher.rafaprogrammer.com.br
+  - host: jenkins2.rancher.rafaprogrammer.com.br
     http:
       paths:
       - path: /
