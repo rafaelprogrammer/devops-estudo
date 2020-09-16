@@ -18,11 +18,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jenkins-selva
+      app: jenkins2
   template:
     metadata:
       labels:
-        app: jenkins-selva
+        app: jenkins2
     spec:
       containers:
       - name: jenkins-selva
@@ -43,7 +43,7 @@ metadata:
   name: jenkins-web
 spec:
   selector:
-    app: jenkins-selva
+    app: jenkins2
   ports:
   - name: j-web
     port: 80
