@@ -28,7 +28,7 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-        - containerPort: 9090
+        - containerPort: 8080
         volumeMounts:
           - name: jenkins-home
             mountPath: /var/lib/jenkins
@@ -52,7 +52,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-web
+  name: jenkins-ui
 spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
