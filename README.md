@@ -74,6 +74,7 @@
 - [GRAYLOG - LOG](#graylog)
 - [GRAFANA/PROMETHEUS - MONITORAMENTO](#grafana)
 - [KUBERNETES - RECURSOS](#recursos)
+- [PIPELINE - RANCHER](#pipeline-rancher)
 
 GRAFANA/PROMETHEUS - MONITORAMENTO
 
@@ -417,9 +418,27 @@ Serve para organizar onde irão rodar os containers. Neste exemplo estamos usand
 ```
 $ kubectl get nodes 
 $ kubectl label nodes <your-node-name> disktype=ssd
-
+$ cd devops-estudo/recursos
 $ kubectl apply -f node-selector.yml
 
 # remover o Label do node
-$ kubectl label nodes k8s-1 disktype-
+$ kubectl label nodes <your-node-name> disktype-
 ```
+<a id="pipeline-rancher"></a>
+## PIPELINE - RANCHER
+
+1 - Alterar, nos arquivos abaixos o dominio: '<dominio>' 
+```
+$ cd devops-estudo/pipeline-rancher
+$ vi deployment.yml
+$ vi main.go
+```
+
+2 - Habilitar Pipeline
+Habilitar o Pipeline dentro do Rancher, e usar os repositório: 
+
+
+
+Habilitar o Pipeline dentro do Rancher, e fazer uma alteração no código-fonte, fazendo um push para o repositório.
+
+
