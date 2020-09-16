@@ -37,23 +37,22 @@ spec:
           persistentVolumeClaim:
             claimName: jenkins-pvc
 ---
-apiVersion: v1
+piVersion: v1
 kind: Service
 metadata:
-  name: jenkins
+  name: jenkins-web
 spec:
-  type: NodePort
+  selector:
+    k8s-app: jenkins-ingress-lb
   ports:
-  - name: jenkins-web
+  - name: web
     port: 80
     targetPort: 8080
-  selector:
-    app: jenkins
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-ui
+  name: jenkins-web
 spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
@@ -61,5 +60,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: jenkins-ui
-          servicePort: jenkins-web
+          serviceName: jenkins-web
+          servicePort: web
