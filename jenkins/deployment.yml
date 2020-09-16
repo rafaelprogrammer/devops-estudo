@@ -17,9 +17,9 @@ spec:
         image: jenkins/jenkins:lts
         ports:
         - containerPort: 8080
-volumeMounts:
-        - name: jenkins-home
-          mountPath: /var/jenkins_home
+        volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
       volumes:
         - name: jenkins-home
           emptyDir: {}
