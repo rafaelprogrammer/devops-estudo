@@ -47,7 +47,7 @@ spec:
     app: jenkins
   ports:
   - name: j-web
-    port: 9090
+    port: 80
     targetPort: 9090
 ---
 apiVersion: extensions/v1beta1
