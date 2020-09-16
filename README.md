@@ -76,6 +76,7 @@
 - [KUBERNETES - RECURSOS](#recursos)
 - [PIPELINE - RANCHER](#pipeline-rancher)
 - [KUBELESS](#kubeless)
+- [JENKINS](#jenkins)
 
 GRAFANA/PROMETHEUS - MONITORAMENTO
 
@@ -523,3 +524,18 @@ $ kubectl create -f https://raw.githubusercontent.com/kubeless/kubeless-ui/maste
 ```
 
 Na interface do Rancher, iremos acessar pelo IP:PORTA no qual a UI foi instalada.
+
+<a id="jenkins"></a>
+## INSTALAÇÃO DO JENKINS
+
+A instalação do jenkins será efetuado no host rancher-server.
+```
+$ kubectl create namespace jenkins
+$ kubectl get namespaces
+$ cd devops-estudo/jenkins
+$ kubectl create -f deployment.yml --namespace jenkins
+$ kubectl create -f service.yml --namespace jenkins
+# alterar no ingress o dominio
+$ vi ingress.yml
+$ kubectl create -f ingress.yml --namespace jenkins
+```

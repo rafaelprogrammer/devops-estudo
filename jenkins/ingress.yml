@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ui
+  namespace: jenkins
+spec:
+  rules:
+  - host: jenkins.rancher.<dominio>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-ui
+          servicePort: web
