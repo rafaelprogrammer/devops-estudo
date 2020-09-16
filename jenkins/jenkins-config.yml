@@ -23,3 +23,31 @@ spec:
       volumes:
         - name: jenkins-home
           emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins
+spec:
+  type: NodePort
+  ports:
+  - name: jenkins-web
+    port: 80
+    targetPort: 8080
+  selector:
+    app: jenkins
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ui
+  namespace: jenkins
+spec:
+  rules:
+  - host: jenkins.rancher.<dominio>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jenkins-ui
+          servicePort: jenkins-web
