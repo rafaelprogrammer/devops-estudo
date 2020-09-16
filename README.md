@@ -428,10 +428,16 @@ $ kubectl label nodes <your-node-name> disktype-
 ## PIPELINE - RANCHER
 
 1 - Habilitar Pipeline
-Habilitar o Pipeline dentro do Rancher, e usar os repositório: 
+Habilitar o Pipeline dentro do Rancher, e usar repositorio: 
+
+```
+https://github.com/rafaelprogrammer/devops-estudo.git
+```
 
 ![Pipeline Rancher](/imagens/pipeline-rancher.png)
 
 Habilitar o Pipeline dentro do Rancher, e fazer uma alteração no código-fonte, nos arquivos deployment.yml e main.go para colocar o dominio desejado, fazendo um push para o repositório.
 
+2 - Acompanhar Pipeline
 
+![Pipeline Rancher](/imagens/pipeline-rancher.png)

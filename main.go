@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-const webContent = "<dominio>:v99"
+const webContent = "rafaprogrammer.com.br:v99"
 
 func main() {
 	http.HandleFunc("/", helloHandler)
