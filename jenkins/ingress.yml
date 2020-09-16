@@ -11,4 +11,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins-ui
-          servicePort: web
+          servicePort: jenkins-web
