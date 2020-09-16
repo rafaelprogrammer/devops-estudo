@@ -46,7 +46,7 @@ spec:
   ports:
   - name: jenkins-web
     port: 80
-    targetPort: 8080
+    targetPort: 9090
   selector:
     app: jenkins
 ---
