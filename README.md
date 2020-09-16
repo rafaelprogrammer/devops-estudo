@@ -410,3 +410,16 @@ Agora iremos em outro terminal, com o kubectl, verificar como está o HPA, e tam
 $ kubectl get hpa
 $ kubectl get deployment php-apache
 ```
+
+## LABEL E SELETORES
+Serve para organizar onde irão rodar os containers. Neste exemplo estamos usando disco SSD em 1 máquina, poderia ser ambiente diferente, recursos de rede diferentes também, etc.
+
+```
+$ kubectl get nodes 
+$ kubectl label nodes <your-node-name> disktype=ssd
+
+$ kubectl apply -f node-selector.yml
+
+# remover o Label do node
+$ kubectl label nodes k8s-1 disktype-
+```
