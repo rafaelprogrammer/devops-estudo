@@ -55,7 +55,7 @@ metadata:
   name: jenkins-web
 spec:
   rules:
-  - host: jenkins.rancher.rafaprogrammer.com.br
+  - host: jenkins.rafaprogrammer.com.br
     http:
       paths:
       - path: /
