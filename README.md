@@ -444,3 +444,8 @@ Habilitar o Pipeline dentro do Rancher, e fazer uma alteração no código-fonte
 
 ![Pipeline Rancher](/imagens/pipeline-run.png)
 
+3 -  Acessar:
+
+```
+http://go.rancher.rafaprogrammer.com.br/
+```
