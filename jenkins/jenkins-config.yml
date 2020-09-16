@@ -31,7 +31,7 @@ spec:
         - containerPort: 8080
         volumeMounts:
           - name: jenkins-home
-          mountPath: /var/lib/jenkins
+            mountPath: /var/lib/jenkins
       volumes:
         - name: jenkins-home
           persistentVolumeClaim:
