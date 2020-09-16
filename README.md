@@ -532,6 +532,7 @@ A instalação do jenkins será efetuado no host rancher-server.
 ```
 $ kubectl create namespace jenkins
 $ kubectl get namespaces
+# No Rancher colocar o namespace no projeto default para visualização
 $ cd devops-estudo/jenkins
 $ kubectl create -f deployment.yml --namespace jenkins
 $ kubectl create -f service.yml --namespace jenkins
