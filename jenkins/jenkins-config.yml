@@ -28,7 +28,7 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-        - containerPort: 8080
+        - containerPort: 9090
         volumeMounts:
           - name: jenkins-home
             mountPath: /var/lib/jenkins
