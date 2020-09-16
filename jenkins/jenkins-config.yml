@@ -43,7 +43,7 @@ metadata:
   name: jenkins-web
 spec:
   selector:
-    k8s-app: jenkins-ingress-lb
+    app: jenkins
   ports:
   - name: j-web
     port: 9090
@@ -52,7 +52,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-ui
+  name: jenkins-web
 spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
