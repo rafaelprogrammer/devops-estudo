@@ -441,3 +441,6 @@ Habilitar o Pipeline dentro do Rancher, e fazer uma alteração no código-fonte
 2 - Acompanhar Pipeline
 
 ![Pipeline Rancher](/imagens/pipeline-rancher.png)
+
+![Pipeline Rancher](/imagens/pipeline-run.png)
+
