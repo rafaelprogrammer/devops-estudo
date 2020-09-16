@@ -42,16 +42,13 @@ kind: Service
 metadata:
   name: jenkins-web
 spec:
+  type: ClusterIP
+  ports:
+  - name: jenkins-web
+    port: 80
+    targetPort: 8080
   selector:
     app: jenkins
-  type: "ClusterIP"
-  ports:
-  - name: j-web
-  spec:
-  - port: 8086
-    targetPort: 8086
-    protocol: TCP
-    name: tcp
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
