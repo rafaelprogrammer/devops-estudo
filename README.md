@@ -75,6 +75,7 @@
 - [GRAFANA/PROMETHEUS - MONITORAMENTO](#grafana)
 - [KUBERNETES - RECURSOS](#recursos)
 - [PIPELINE - RANCHER](#pipeline-rancher)
+- [KUBELESS](#kubeless)
 
 GRAFANA/PROMETHEUS - MONITORAMENTO
 
@@ -449,3 +450,76 @@ Habilitar o Pipeline dentro do Rancher, e fazer uma alteração no código-fonte
 ```
 http://go.rancher.rafaprogrammer.com.br/
 ```
+
+<a id="kubeless"></a>
+## KUBELESS
+
+https://kubeless.io
+
+Para instalar o Kubeless em nosso cluster, iremos rodar os comandos abaixo.
+```
+$ export RELEASE=$(curl -s https://api.github.com/repos/kubeless/kubeless/releases/latest | grep tag_name | cut -d '"' -f 4)
+$ kubectl create ns kubeless
+$ kubectl create -f https://github.com/kubeless/kubeless/releases/download/$RELEASE/kubeless-$RELEASE.yaml
+
+$ kubectl get pods -n kubeless
+NAME                                           READY     STATUS    RESTARTS   AGE
+kubeless-controller-manager-567dcb6c48-ssx8x   1/1       Running   0          1h
+
+$ kubectl get deployment -n kubeless
+NAME                          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kubeless-controller-manager   1         1         1            1           1h
+
+$ kubectl get customresourcedefinition
+NAME                          AGE
+cronjobtriggers.kubeless.io   1h
+functions.kubeless.io         1h
+httptriggers.kubeless.io      1h
+```
+
+Depois de instalado no cluster, iremos agora instalar a linha de comando no mesmo local onde usamos nosso kubectl.
+```
+$ export OS=$(uname -s| tr '[:upper:]' '[:lower:]')
+
+# Baixar o UNZIP
+$ apt install unzip
+
+$ cd /home/ubuntu
+$ curl -OL https://github.com/kubeless/kubeless/releases/download/$RELEASE/kubeless_$OS-amd64.zip && unzip kubeless_$OS-amd64.zip && sudo mv bundles/kubeless_$OS-amd64/kubeless /usr/local/bin/
+```
+
+Para verificar se foi instalado corretamente, iremos rodar:
+```
+$ kubeless function ls
+```
+
+Kubeless - Função exemplo
+
+Para fazer o deploy da função, iremos usar o arquivo de modelo exemplo test.py
+```
+$ cd devops-estudo/kubeless
+$ kubeless function deploy hello --runtime python2.7 --from-file test.py --handler test.hello
+$ kubectl get functions
+$ kubeless function ls
+```
+Para chamar a função podemos fazer da seguinte forma:
+
+```
+$ kubeless function call hello --data 'Hello world!'
+```
+
+Agora iremos aplicar a função através do arquivo YML, contendo todos os dados da função
+```
+$ kubectl apply -f function-nodejs.yml
+```
+
+### Kubeless UI
+
+https://github.com/kubeless/kubeless-ui
+
+O Kubeless possui uma UI para facilitar a operação. Para instalar ela, iremos rodar:
+```
+$ kubectl create -f https://raw.githubusercontent.com/kubeless/kubeless-ui/master/k8s.yaml
+```
+
+Na interface do Rancher, iremos acessar pelo IP:PORTA no qual a UI foi instalada.
