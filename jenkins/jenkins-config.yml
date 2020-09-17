@@ -46,7 +46,7 @@ spec:
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 44000
+      nodePort: 9090
   selector:
     app: jenkins
 ---
@@ -62,4 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins-web
-          servicePort: 44000
+          servicePort: 9090
