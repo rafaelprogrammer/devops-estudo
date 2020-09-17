@@ -28,7 +28,7 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-        - containerPort: 9000
+        - containerPort: 8080
         volumeMounts:
           - name: jenkins-home
             mountPath: /var/lib/jenkins
@@ -44,8 +44,8 @@ metadata:
 spec:
   # type: NodePort
   ports:
-    - port: 9000
-      targetPort: 80
+    - port: 8080
+      targetPort: 9090
       #nodePort: 30000
   selector:
     app: jenkins
@@ -62,4 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins
-          servicePort: 80
+          servicePort: 9090
