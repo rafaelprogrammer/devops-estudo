@@ -42,6 +42,7 @@ kind: Service
 metadata:
   name: jenkins-web
 spec:
+  type: NodePort
   selector:
     app: jenkins
   ports:
@@ -55,10 +56,10 @@ metadata:
   name: jenkins-web
 spec:
   rules:
-  - host: jenkins.rafaprogrammer.com.br
+  - host: jenkins.rancher.rafaprogrammer.com.br
     http:
       paths:
       - path: /
         backend:
           serviceName: jenkins-web
-          servicePort: 80
+          servicePort: 9090
