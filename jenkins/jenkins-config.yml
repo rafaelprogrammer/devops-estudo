@@ -42,7 +42,6 @@ kind: Service
 metadata:
   name: jenkins-web
 spec:
-  type: ClusterIP
   selector:
     app: jenkins
   ports:
