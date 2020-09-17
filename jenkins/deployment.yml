@@ -4,9 +4,6 @@ metadata:
   name: jenkins-pvc
   namespace: jenkins
 spec:
-  selector:
-    matchLabels:
-      app: jenkins
   accessModes:
     - ReadWriteOnce
   storageClassName: longhorn
