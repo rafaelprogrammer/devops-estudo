@@ -62,4 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins
-          servicePort: 9090
+          servicePort: 80
