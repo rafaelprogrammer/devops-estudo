@@ -61,5 +61,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: jenkins-web
+          serviceName: jenkins
           servicePort: 9090
