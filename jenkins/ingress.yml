@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: jenkins-web
+  namespace: jenkins
 spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
