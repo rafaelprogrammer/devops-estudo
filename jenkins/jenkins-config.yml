@@ -40,14 +40,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenkins-web
+  name: jenkins
 spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 44000
   selector:
     app: jenkins
-  ports:
-  - name: j-web
-    port: 80
-    targetPort:  8080
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
