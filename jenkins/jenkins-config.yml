@@ -47,7 +47,7 @@ spec:
   type: 'ClusterIP'
   ports:
   - name: j-web
-    #port: 80
+    port: 80
     targetPort: 8080
 ---
 apiVersion: extensions/v1beta1
