@@ -28,7 +28,7 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-        - containerPort: 9090
+        - containerPort: 9000
         volumeMounts:
           - name: jenkins-home
             mountPath: /var/lib/jenkins
@@ -44,11 +44,17 @@ metadata:
 spec:
   # type: NodePort
   ports:
-    - port: 9090
-      targetPort: 9090
+    - port: 9000
+      #targetPort: 9090
       #nodePort: 30000
   selector:
     app: jenkins
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-web
+spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
     http:
@@ -56,18 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins
-          servicePort: 9090
-#---
-#apiVersion: extensions/v1beta1
-#kind: Ingress
-#metadata:
-#  name: jenkins-web
-#spec:
-#  rules:
-#  - host: jenkins.rancher.rafaprogrammer.com.br
-#    http:
-#      paths:
-#      - path: /
-#        backend:
-#          serviceName: jenkins
-#          servicePort: 9090
+          servicePort: 9000
