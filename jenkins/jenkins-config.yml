@@ -28,7 +28,7 @@ spec:
       - name: jenkins
         image: jenkins/jenkins:lts
         ports:
-        - containerPort: 9090
+        - containerPort: 8080
         volumeMounts:
           - name: jenkins-home
             mountPath: /var/lib/jenkins
@@ -42,13 +42,13 @@ kind: Service
 metadata:
   name: jenkins-web
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: jenkins
   ports:
   - name: j-web
     port: 80
-    targetPort: 9090
+    targetPort: 8080
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -62,4 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins-web
-          servicePort: 9090
+          servicePort: 8080
