@@ -5,7 +5,7 @@ metadata:
   namespace: jenkins
 spec:
   rules:
-  - host: jenkins.rancher.rafaprogrammer.com.br
+  - host: jenkins.rancher.<dominio>
     http:
       paths:
       - path: /
