@@ -540,3 +540,16 @@ $ kubectl create -f service.yml --namespace jenkins
 $ vi ingress.yml
 $ kubectl create -f ingress.yml --namespace jenkins
 ```
+
+Acessar url para configurar o jenkins: 
+
+http://jenkins.rancher.rafaprogrammer.com.br
+
+Obs: O segredo solicitado pelo jenkins é apresentado no log do pods (deployment).
+
+```
+$ kubectl get pods --namespace jenkins
+$ kubectl logs <pods do jenkins> --namespace jenkins
+```
+
+![Secret Jenkins](/imagens/secret-jenkins.png)
