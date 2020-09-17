@@ -62,4 +62,4 @@ spec:
       - path: /
         backend:
           serviceName: jenkins-web
-          servicePort: 8080
+          servicePort: 44000
