@@ -45,7 +45,7 @@ spec:
   # type: NodePort
   ports:
     - port: 9090
-      targetPort: 9090
+      targetPort: 8080
       #nodePort: 30000
   selector:
     app: jenkins
