@@ -49,12 +49,6 @@ spec:
       #nodePort: 30000
   selector:
     app: jenkins
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: jenkins-web
-spec:
   rules:
   - host: jenkins.rancher.rafaprogrammer.com.br
     http:
@@ -63,3 +57,17 @@ spec:
         backend:
           serviceName: jenkins
           servicePort: 9090
+#---
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: jenkins-web
+#spec:
+#  rules:
+#  - host: jenkins.rancher.rafaprogrammer.com.br
+#    http:
+#      paths:
+#      - path: /
+#        backend:
+#          serviceName: jenkins
+#          servicePort: 9090
