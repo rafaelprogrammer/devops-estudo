@@ -44,6 +44,7 @@ metadata:
 spec:
   selector:
     app: jenkins
+  type: 'ClusterIP'
   ports:
   - name: j-web
     port: 80
